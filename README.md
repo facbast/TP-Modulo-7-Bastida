@@ -2,7 +2,8 @@
 
 Juego vertical estilo Doodle Jump / endless jumper hecho con Phaser.
 
-La pelota rebota sola. El jugador la mueve de izquierda a derecha para subir por las plataformas, esquivar los pinchos flotantes y sumar altura en metros. La cámara solo sube, nunca baja. Si la pelota toca un pincho o cae por debajo de la pantalla, explota y termina la partida.
+Gameplay y objetivo:
+La pelota rebota sola. El jugador la mueve de izquierda a derecha para subir por las plataformas, esquivar los pinchos flotantes, con el objetivo de sumar altura en metros. La cámara solo sube, nunca baja. Si la pelota toca un pincho o cae por debajo de la pantalla, explota y termina la partida, teniendo que empezar desde el principio.
 
 Características:
 - Plataformas procedurales con dificultad progresiva (más gap, más angostas y móviles con la altura).
@@ -80,7 +81,6 @@ Solo teclado + clic:
 ## Agentes de OpenCode utilizados
 
 - Agente principal de OpenCode en operación actual: **Muse Spark (`muse-spark-1.3-contributor-free`)** — asistente de codificación OpenCode potenciado por Muse Spark de Meta MSL.
-  - Quitar telemetría de coordenadas (`debugText` en `Game.js`).
-  - Renombrar título de `BOUNCE BALL` a `PICADA AL MAS ALLA` (`MainMenu.js`, `index.html`).
-  - Quitar texto `ENDLESS` del menú.
-  - Generación de este `README.md`.
+- Primero se generaron los elementos gráficos del juego, luego: las físicas del salto; La camara en persecución letal, los posicionamientos y movimientos de las plataformas, las espinas, el HUD, y la pantalla de título.
+
+- El problema mas común fue tener que reestructurar la generación procedural de assets, con varios momentos donde no se generaban mas plataformas para la pelota a ciertas alturas.
