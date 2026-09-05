@@ -90,11 +90,6 @@ export class Game extends Phaser.Scene
             '← →  o  A D para moverte', {
             fontFamily: 'Arial', fontSize: '15px', color: '#ffffff'
         }).setOrigin(0.5).setScrollFactor(0).setDepth(100).setAlpha(0.85);
-        // Telemetría temporal de diagnóstico (se quita cuando ande)
-        this.debugText = this.add.text(12, 64, '', {
-            fontFamily: 'monospace', fontSize: '12px', color: '#7fff7f'
-        }).setScrollFactor(0).setDepth(100);
-        this.debugTimer = 0;
 
         // Cámara: empieza mirando la zona de inicio.
         // Seguimiento manual solo hacia arriba (nunca baja).
@@ -454,18 +449,6 @@ export class Game extends Phaser.Scene
         {
             this.explode();
             return;
-        }
-
-        // Telemetría temporal (~4 veces por segundo)
-        this.debugTimer += delta;
-        if (this.debugTimer > 250)
-        {
-            this.debugTimer = 0;
-            this.debugText.setText(
-                `y:${Math.round(this.ball.y)} vy:${Math.round(this.ball.body.velocity.y)} ` +
-                `topY:${Math.round(this.topY)} plats:${this.platforms.getLength()} ` +
-                `spikes:${this.spikes.getLength()} fps:${Math.round(this.game.loop.actualFps)}`
-            );
         }
 
         // Reinicio rápido con R

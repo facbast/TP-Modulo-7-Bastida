@@ -28,15 +28,9 @@ export class MainMenu extends Scene
             g.destroy();
         }
 
-        this.add.text(W / 2, 150, 'BOUNCE BALL', {
-            fontFamily: 'Arial Black', fontSize: '48px', color: '#ffffff',
+        this.add.text(W / 2, 150, 'PICADA\nAL MAS ALLA', {
+            fontFamily: 'Arial Black', fontSize: '44px', color: '#ffffff',
             stroke: '#000000', strokeThickness: 8,
-            align: 'center'
-        }).setOrigin(0.5);
-
-        this.add.text(W / 2, 210, 'ENDLESS', {
-            fontFamily: 'Arial Black', fontSize: '28px', color: '#ffd166',
-            stroke: '#000000', strokeThickness: 6,
             align: 'center'
         }).setOrigin(0.5);
 
